@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Twitter -->
+    <meta name="twitter:site" content="@@themepixels">
+    <meta name="twitter:creator" content="@@themepixels">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Slim">
+    <meta name="twitter:description" content="Premium Quality and Responsive UI for Dashboard.">
+    <meta name="twitter:image" content="http://themepixels.me/slim/img/slim-social.png">
+
+    <!-- Facebook -->
+    <meta property="og:url" content="http://themepixels.me/slim">
+    <meta property="og:title" content="Slim">
+    <meta property="og:description" content="Premium Quality and Responsive UI for Dashboard.">
+
+    <meta property="og:image" content="http://themepixels.me/slim/img/slim-social.png">
+    <meta property="og:image:secure_url" content="http://themepixels.me/slim/img/slim-social.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="600">
+
+    <!-- Meta -->
+    <meta name="description" content="Premium Quality and Responsive UI for Dashboard.">
+    <meta name="author" content="ThemePixels">
+
+    <title>@ViewData["Title"] - Admin</title> 
+
+    <!-- vendor css -->
+    <link href="~/AdminAssets/lib/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="~/AdminAssets/lib/Ionicons/css/ionicons.css" rel="stylesheet">
+    <link href="~/AdminAssets/lib/perfect-scrollbar/css/perfect-scrollbar.min.css" rel="stylesheet">
+
+    <!-- Slim CSS -->
+    <link href="~/AdminAssets/css/slim.css" rel="stylesheet" />
+    @await RenderSectionAsync("Styles", required: false)
+</head>
+<body>
+
+    <div class="slim-header with-sidebar">
+        <div class="container-fluid">
+            <div class="slim-header-left">
+                <h2 class="slim-logo"><a href="index.html">Admin<span>.</span></a></h2>
+                <a href="" id="slimSidebarMenu" class="slim-sidebar-menu"><span></span></a>
+                <div class="search-box">
+                    <input type="text" class="form-control" placeholder="Search">
+                    <button class="btn btn-primary"><i class="fa fa-search"></i></button>
+                </div><!-- search-box -->
+            </div><!-- slim-header-left -->
+            <div class="slim-header-right">
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <div class="dropdown dropdown-c">
+                        <a href="#" class="logged-user" data-toggle="dropdown">
+                            <img src="http://via.placeholder.com/500x500" alt="">
+                            <span>@User.Identity.Name.ToUpper()</span>
+                            <i class="fa fa-angle-down"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <nav class="nav">
+                                <a href="page-profile.html" class="nav-link"><i class="icon ion-person"></i> View Profile</a>
+                                <a href="page-edit-profile.html" class="nav-link"><i class="icon ion-compose"></i> Edit Profile</a>
+                                <a href="page-activity.html" class="nav-link"><i class="icon ion-ios-bolt"></i> Activity Log</a>
+                                <a href="page-settings.html" class="nav-link"><i class="icon ion-ios-gear"></i> Account Settings</a>
+                                <a href="/dang-xuat.html" class="nav-link"><i class="icon ion-forward"></i> Sign Out</a>
+                            </nav>
+                        </div><!-- dropdown-menu -->
+                    </div><!-- dropdown -->
+                }
+            </div><!-- header-right -->
+        </div><!-- container-fluid -->
+    </div><!-- slim-header -->
+
+
+    <div class="slim-body">
+        <div class="slim-sidebar">
+            <ul class="nav nav-sidebar">
+                <li class="sidebar-nav-item with-sub active">
+                    <a class="sidebar-nav-link" asp-area="Admin" asp-controller="Home" asp-action="Index">
+                        <i class="icon ion-ios-home-outline"></i>
+                        <span>Bảng tin</span>
+                    </a>
+                </li>
+                <li class="sidebar-nav-item with-sub">
+                    <a class="sidebar-nav-link" href="#">
+                        <i class="icon ion-ios-filing-outline"></i>
+                        <span>Thư mục</span>
+                    </a>
+                    <div class="sub-item">
+                        <ul>
+                            <li><a asp-area="Admin" asp-controller="Files" asp-action="Index">Quản lý thư mục</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="sidebar-nav-item with-sub">
+                    <a class="sidebar-nav-link" href="#">
+                        <i class="icon ion-ios-filing-outline"></i>
+                        <span>Tài liệu</span>
+                    </a>
+                    <div class="sub-item">
+                        <ul>
+                            <li><a asp-area="Admin" asp-controller="Documents" asp-action="Index">Quản lý tài liệu</a> </li>
+                        </ul>
+                    </div>
+                <li class="sidebar-nav-item with-sub">
+                    <a class="sidebar-nav-link" href="#">
+                        <i class="icon ion-ios-gear-outline"></i>
+                        <span>Hệ thống</span>
+                    </a>
+                    <div class="sub-item">
+                        <ul>
+                            <li><a asp-area="Admin" asp-controller="Accounts" asp-action="Index">Quản lý tài khoản</a> </li>
+                            <li><a asp-area="Admin" asp-controller="Roles" asp-action="Index">Quyền truy cập</a> </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div><!-- slim-sidebar -->
+        <div class="slim-mainpanel">
+            <div class="container">
+                @RenderBody()
+
+            </div><!-- container -->
+
+            <div class="slim-footer mg-t-0">
+                <div class="container-fluid">
+                    <p>Copyright 2018 &copy; All Rights Reserved. Slim Dashboard Template</p>
+                    <p>Designed by: <a href="">ThemePixels</a></p>
+                </div><!-- container-fluid -->
+            </div><!-- slim-footer -->
+        </div><!-- slim-mainpanel -->
+    </div><!-- slim-body -->
+
+    <script src="~/AdminAssets/lib/jquery/js/jquery.js"></script>
+    <script src="~/AdminAssets/lib/popper.js/js/popper.js"></script>
+    <script src="~/AdminAssets/lib/bootstrap/js/bootstrap.js"></script>
+    <script src="~/AdminAssets/lib/jquery.cookie/js/jquery.cookie.js"></script>
+    <script src="~/AdminAssets/lib/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js"></script>
+    <script src="~/AdminAssests/lib/chartist/js/chartist.js"></script>
+    <script src="~/AdminAssests/lib/d3/js/d3.js"></script>
+    <script src="~/AdminAssests/lib/jquery.sparkline.bower/js/jquery.sparkline.min.js"></script>
+    <script src="~/AdminAssests/lib/rickshaw/js/rickshaw.min.js"></script>
+    <script src="~/AdminAssets/js/slim.js"></script>
+    <script src="~/AdminAssests/js/ResizeSensor.js"></script>
+    <script src="~/AdminAssests/js/dashboard.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

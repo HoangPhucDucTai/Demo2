@@ -1,0 +1,82 @@
+﻿@model NewsWeb.Models.Document
+
+@{
+    ViewData["Title"] = Model.Title;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    string url = $"/{Model.Alias}.html";
+}
+<section class="main-content mt-3">
+    <div class="container-xl">
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="/@Model.File.Alias">@Model.File.FileName</a></li>
+                <li class="breadcrumb-item active" aria-current="page">@Model.Title</li>
+            </ol>
+        </nav>
+
+        <div class="row gy-4">
+
+            <div class="col-lg-8">
+                <!-- post single -->
+                <div class="post post-single">
+                    <!-- post header -->
+                    <div class="post-header">
+                        <h1 class="title mt-0 mb-3">@Model.Title</h1>
+                        <ul class="meta list-inline mb-0">
+                            <li class="list-inline-item"><a href="@url"><img src="images/other/author-sm.png" class="author" alt="@Model.Author" />@Model.Author</a></li>
+                            <li class="list-inline-item"><a href="/@Model.File.Alias">@Model.File.FileName</a></li>
+                            <li class="list-inline-item">@Model.DateCreate.Value.ToString("dd MMMM yyyy")</li>
+                        </ul>
+                    </div>
+                    <!-- featured image -->
+                    <div class="featured-image">
+                        <img src="images/news/@Model.Thumb" alt="@Model.Title" />
+                    </div>
+                    <!-- post content -->
+                    <div class="post-content clearfix">
+                       @Html.Raw(Model.Contents)
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="sidebar">
+                    <!-- widget popular posts -->
+                    <div class="widget rounded">
+                        <div class="widget-header text-center">
+                            <h3 class="widget-title">Tài liệu nổi bật</h3>
+                            <img src="images/wave.svg" class="wave" alt="wave" />
+                        </div>
+                        @await Component.InvokeAsync("Popular")
+                    </div>
+                    <!-- widget categories -->
+                    <div class="widget rounded">
+                        <div class="widget-header text-center">
+                            <h3 class="widget-title">Danh sách thư mục</h3>
+                            <img src="images/wave.svg" class="wave" alt="wave" />
+                        </div>
+                        @await Component.InvokeAsync("Files")
+                    </div>
+                    <!-- widget tags -->
+                    <div class="widget rounded">
+                        <div class="widget-header text-center">
+                            <h3 class="widget-title">Từ khóa chủ đề</h3>
+                            <img src="images/wave.svg" class="wave" alt="wave" />
+                        </div>
+                        <div class="widget-content">
+                            <a href="#" class="tag">#Trending</a>
+                            <a href="#" class="tag">#Video</a>
+                            <a href="#" class="tag">#Featured</a>
+                            <a href="#" class="tag">#Gallery</a>
+                            <a href="#" class="tag">#Celebrities</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- sidebar -->
+            </div>
+        </div>
+    </div>
+</section>
+
+

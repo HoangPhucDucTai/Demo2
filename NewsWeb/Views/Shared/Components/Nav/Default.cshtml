@@ -1,0 +1,10 @@
+﻿@model List<File>
+@if (Model != null)
+{
+      <ul class="dropdown-menu">
+            @foreach (var item in Model)
+            {
+                <li><a class="dropdown-item" href="/@item.Alias">@item.FileName</a></li>
+            }
+      </ul>
+}

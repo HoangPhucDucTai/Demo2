@@ -1,0 +1,65 @@
+﻿@using PagedList.Core.Mvc
+@model PagedList.Core.IPagedList<NewsWeb.Models.File>
+@{
+    ViewData["Title"] = "Quản lý thư mục";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<div class="slim-pageheader">
+    <ol class="breadcrumb slim-breadcrumb">
+        <li class="breadcrumb-item"><a asp-area="Admin" asp-controller="Home" asp-action="Index">Home</a></li>
+        <li class="breadcrumb-item"><a asp-area="Admin" asp-controller="Files" asp-action="Index">Danh sách Thư mục</a></li>
+        <li class="breadcrumb-item"><a asp-area="Admin" asp-controller="Files" asp-action="Create">Tạo mới thư mục</a></li>
+    </ol>
+    <h6 class="slim-pagetitle">Quản lý thư mục</h6>
+</div>
+
+<div class="section-wrapper">
+    <div class="table-responsive">
+        <table class="table mg-b-0">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tên thư mục</th>
+                    <th>Trạng thái</th>
+                    <th>Chức năng</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null && Model.Count > 0)
+                {
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <th scope="row">@item.FileId</th>
+                            <td>
+                                <a href="/@item.Alias">@item.FileName</a>
+                            </td>
+                            <td>
+                                @if (item.Published == true)
+                                {
+                                    <span class="badge badge-primary">Public</span>
+                                }
+                                else
+                                {
+                                    <span class="badge badge-primary">NON-Public</span>
+                                }
+                            </td>
+                            <td>
+                                <a asp-area="Admin" asp-controller="Files" asp-action="Details" asp-route-id="@item.FileId" class="btn btn-success">View</a>
+                                <a asp-area="Admin" asp-controller="Files" asp-action="Edit" asp-route-id="@item.FileId" class="btn btn-primary">Edit</a>
+                                <a asp-area="Admin" asp-controller="Files" asp-action="Delete" asp-route-id="@item.FileId" class="btn btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+        <div arial-label="Page navigation example">
+            <ul class="pagination">
+                <pager class="pager-container" options="@PagedListRenderOptions.Bootstrap4PageNumbersOnly" list="@Model" asp-area="Admin" asp-controller="Files" asp-action="Index"></pager>
+            </ul>
+        </div>
+    </div>
+</div>

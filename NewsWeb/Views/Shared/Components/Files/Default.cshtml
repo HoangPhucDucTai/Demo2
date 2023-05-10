@@ -1,0 +1,12 @@
+﻿@model List<File>
+@if (Model != null)
+{
+    <div class="widget-content" >
+        <ul class=" list">
+            @foreach (var item in Model)
+            {   
+                 <li><a href="/@item.Alias">@item.FileName</a> </li>
+            }
+        </ul>
+    </div>
+}

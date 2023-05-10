@@ -1,0 +1,178 @@
+﻿@model NewsWeb.Models.Document
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div class="slim-pageheader">
+    <ol class="breadcrumb slim-breadcrumb">
+        <li class="breadcrumb-item"><a asp-area="Admin" asp-controller="Home" asp-action="Index">Home</a></li>
+        <li class="breadcrumb-item"><a asp-area="Admin" asp-controller="Documents" asp-action="Index">Danh sách tài liệu</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Xóa tài liệu</li>
+    </ol>
+    <h6 class="slim-pagetitle">Xóa tài liệu</h6>
+</div>
+<div class="section-wrapper mg-t-20">
+    <div class="form-layout form-layout-7">
+        <div class=" row no-gutters">
+            <div class="col-5 col-sm-4">
+                ID:
+            </div>
+            <div class="col-7 col-sm-8">
+                <input asp-for="DocId" class="form-control" type="text" />
+            </div>
+        </div>
+        <div class="row no-gutters">
+            <div class="col-5 col-sm-4">
+                Tiêu đề:
+            </div>
+            <div class="col-7 col-sm-8">
+                <input asp-for="Title" class="form-control" type="text" />
+            </div>
+        </div>
+        <div class="row no-gutters">
+            <div class="col-5 col-sm-4">
+                Ngày sửa:
+            </div>
+            <div class="col-7 col-sm-8">
+                <input asp-for="DateCreate" class="form-control" type="text" />
+            </div>
+        </div>
+        <div class="row no-gutters">
+            <div class="col-5 col-sm-4">
+                Thư mục:
+            </div>
+            <div class="col-7 col-sm-8">
+                <input asp-for="File.FileName" class="form-control" type="text" />
+            </div>
+        </div>
+        <div class="row no-gutters">
+            <div class="col-5 col-sm-4">
+                Tác giả:
+            </div>
+            <div class="col-7 col-sm-8">
+                <input asp-for="@Model.Author" class="form-control" type="text" />
+            </div>
+        </div>
+
+    </div>
+    <div style="text-align:center !important" class="form-layout-footer mg-t-30">
+        <form asp-area="Admin" asp-action="Delete" asp-route-id="@Model.DocId">
+            <input type="hidden" asp-for="DocId" />
+            <input type="submit" value="Xác nhận xóa" class="btn btn-danger" />
+            <a asp-area="Admin" asp-controller="Documents" asp-action="Index" class="btn btn-success bd-0">Trở về danh sách</a>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Document</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Contents)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Contents)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Scontents)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Scontents)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Thumb)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Thumb)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Alias)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Alias)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DateCreate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DateCreate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Published)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Published)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Author)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Author)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Pin)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Pin)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Tags)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Tags)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Account)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Account.AccountId)
+        </dd class>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.File)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.File.FileId)
+        </dd class>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="DocId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>*@

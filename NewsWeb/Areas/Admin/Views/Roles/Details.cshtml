@@ -1,0 +1,45 @@
+﻿@model NewsWeb.Models.Role
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="slim-pageheader">
+    <ol class="breadcrumb slim-breadcrumb">
+        <li class="breadcrumb-item"><a asp-area="Admin" asp-controller="Home" asp-action="Index">Home</a></li>
+        <li class="breadcrumb-item"><a asp-area="Admin" asp-controller="Roles" asp-action="Index">Quản lý quyền truy cập</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Thông tin quyền truy cập</li>
+    </ol>
+    <h6 class="slim-pagetitle">Thông tin quyền truy cập</h6>
+</div>
+<div class="section-wrapper mg-t-20">
+    <div class="form-layout form-layout-7">
+        <div class=" row no-gutters">
+            <div class="col-5 col-sm-4">
+                ID:
+            </div>
+            <div class="col-7 col-sm-8">
+                <input asp-for="RoleId" class="form-control" type="text" />
+            </div>
+        </div>
+        <div class="row no-gutters">
+            <div class="col-5 col-sm-4">
+                Tên:
+            </div>
+            <div class="col-7 col-sm-8">
+                <input asp-for="RoleName" class="form-control" type="text" />
+            </div>
+        </div>
+        <div class="row no-gutters">
+            <div class="col-5 col-sm-4">
+                Mô tả:
+            </div>
+            <div class="col-7 col-sm-8">
+                <input asp-for="RoleDescription" class="form-control" type="text" />
+            </div>
+        </div>
+    </div>
+</div>
+
+

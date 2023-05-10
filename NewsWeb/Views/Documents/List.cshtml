@@ -1,0 +1,117 @@
+﻿@using PagedList.Core.Mvc
+@model PagedList.Core.IPagedList<NewsWeb.Models.Document>
+
+@{
+    File file = ViewBag.ThuMuc;
+    ViewData["Title"] = file.Title;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<section class="page-header">
+    <div class="container-xl">
+        <div class="text-center">
+            <h1 class="mt-0 mb-2">Thư Mục</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">@file.FileName</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<!-- section main content -->
+<section class="main-content">
+    <div class="container-xl">
+
+        <div class="row gy-4">
+
+            <div class="col-lg-8">
+
+                <div class="row gy-4">
+                    @if (Model != null && Model.Count() > 0)
+                    {
+                        foreach (var item in Model)
+                        {
+                            string url = $"/{item.Alias}.html";
+                            <div class="col-sm-6">
+                                <!-- post -->
+                                <div class="post post-grid rounded bordered">
+                                    <div class="thumb top-rounded">
+                                        <a href="/@item.File.Alias" class="category-badge position-absolute">@item.File.FileName</a>
+                                        <span class="post-format">
+                                            <i class="icon-picture"></i>
+                                        </span>
+                                        <a href="@url">
+                                            <div class="inner">
+                                                <img src="~/images/posts/@item.Thumb" alt="@item.Title" />
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="details">
+                                        <ul class="meta list-inline mb-0">
+                                            <li class="list-inline-item"><a href="#"><img src="images/other/author-sm.png" class="author" alt="@item.Title" />@item.Author</a></li>
+                                            <li class="list-inline-item">@item.DateCreate.Value.ToString("dd MMMM yyyy")</li>
+                                        </ul>
+                                        <h5 class="post-title mb-3 mt-3"><a href="@url">@item.Title</a></h5>
+                                        <p class="excerpt mb-0">@item.Scontents</p>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+                </div>
+
+                <nav>
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item active" aria-current="page">
+                            <span class="page-link">1</span>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+            <div class="col-lg-4">
+                <!-- sidebar -->
+                <div class="sidebar">
+                    <!-- widget popular posts -->
+                    <div class="widget rounded">
+                        <div class="widget-header text-center">
+                            <h3 class="widget-title">Tài liệu nổi bật</h3>
+                            <img src="images/wave.svg" class="wave" alt="wave" />
+                        </div>
+                        @await Component.InvokeAsync("Popular")
+                    </div>
+                    <!-- widget categories -->
+                    <div class="widget rounded">
+                        <div class="widget-header text-center">
+                            <h3 class="widget-title">Danh sách thư mục</h3>
+                            <img src="images/wave.svg" class="wave" alt="wave" />
+                        </div>
+                        @await Component.InvokeAsync("Files")
+                    </div>
+                    <!-- widget tags -->
+                    <div class="widget rounded">
+                        <div class="widget-header text-center">
+                            <h3 class="widget-title">Từ khóa chủ đề</h3>
+                            <img src="images/wave.svg" class="wave" alt="wave" />
+                        </div>
+                        <div class="widget-content">
+                            <a href="#" class="tag">#Trending</a>
+                            <a href="#" class="tag">#Video</a>
+                            <a href="#" class="tag">#Featured</a>
+                            <a href="#" class="tag">#Gallery</a>
+                            <a href="#" class="tag">#Celebrities</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
