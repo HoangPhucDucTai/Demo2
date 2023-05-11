@@ -32,10 +32,26 @@ namespace NewsWeb.Controllers
             var pageNumber = page == null || page <= 0 ? 1 : page.Value;
             //var pageSize = 2;
             var pageSize = Utilities.PAGE_SIZE;
+            List<Document> lsDocs = new List<Document>();
 
-            var lsDocs = _context.Documents.Include(x => x.File).AsNoTracking()
-                .OrderByDescending(x => x.DateCreate);
-            PagedList<Document> models = new PagedList<Document>(lsDocs, pageNumber, pageSize);
+            if (!string.IsNullOrEmpty(Alias))
+            {
+                lsDocs = _context.Documents.
+                    Include(x => x.File)
+                    .Where(x => x.FileId == thumuc.FileId)
+                    .AsNoTracking()
+                    .OrderByDescending(x => x.DateCreate)
+                    .ToList();
+            }
+            else
+            {
+                lsDocs = _context.Documents.
+                    Include(x => x.File)
+                    .AsNoTracking()
+                    .OrderByDescending(x => x.DateCreate)
+                    .ToList();
+            } 
+            PagedList<Document> models = new PagedList<Document>(lsDocs.AsQueryable(), pageNumber, pageSize);
             ViewBag.CurrentPage = pageNumber;
             ViewBag.ThuMuc = thumuc;
 

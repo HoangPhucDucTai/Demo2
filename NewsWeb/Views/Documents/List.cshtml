@@ -64,15 +64,11 @@
                     }
                 </div>
 
-                <nav>
-                    <ul class="pagination justify-content-center">
-                        <li class="page-item active" aria-current="page">
-                            <span class="page-link">1</span>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <div arial-label="Page navigation example">
+                    <ul class="pagination">
+                        <pager class="pager-container" options="@PagedListRenderOptions.Bootstrap4PageNumbersOnly" list="@Model" asp-route-Alias="@file.Alias" asp-controller="Documents" asp-action="List"></pager>
                     </ul>
-                </nav>
+                </div>
 
             </div>
             <div class="col-lg-4">
