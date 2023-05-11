@@ -106,7 +106,7 @@ namespace NewsWeb.Areas.Admin.Controllers
                 {
                     string extension = Path.GetExtension(fThumb.FileName);
                     string Newname = Utilities.SEOurl(document.Title) + extension;
-                    document.Thumb = await Utilities.UploadFile(fThumb, @"news\", Newname.ToLower());
+                    document.Thumb = await Utilities.UploadFile(fThumb, @"post\", Newname.ToLower());
                 }
 
                 _context.Add(document);
@@ -170,7 +170,7 @@ namespace NewsWeb.Areas.Admin.Controllers
                     {
                         string extension = Path.GetExtension(fThumb.FileName);
                         string Newname = Utilities.SEOurl(document.Title) + extension;
-                        document.Thumb = await Utilities.UploadFile(fThumb, @"news\", Newname.ToLower());
+                        document.Thumb = await Utilities.UploadFile(fThumb, @"posts\", Newname.ToLower());
                     }
                     document.Alias = Utilities.SEOurl(document.Title);
                     document.AccountId = account.AccountId;

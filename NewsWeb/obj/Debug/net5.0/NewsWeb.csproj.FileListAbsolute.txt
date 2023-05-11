@@ -442,7 +442,6 @@ D:\TaiLieu\BlogWebMVC\NewsWeb\NewsWeb\NewsWeb\obj\Debug\net5.0\Razor\Views\Share
 D:\TaiLieu\BlogWebMVC\NewsWeb\NewsWeb\NewsWeb\obj\Debug\net5.0\Razor\Views\Shared\Components\Social\Default.cshtml.g.cs
 D:\TaiLieu\BlogWebMVC\NewsWeb\NewsWeb\NewsWeb\obj\Debug\net5.0\Razor\Views\Documents\Details.cshtml.g.cs
 D:\TaiLieu\BlogWebMVC\NewsWeb\NewsWeb\NewsWeb\obj\Debug\net5.0\Razor\Views\Documents\List.cshtml.g.cs
-D:\TaiLieu\BlogWebMVC\NewsWeb\NewsWeb\NewsWeb\obj\Debug\net5.0\NewsWeb.csproj.AssemblyReference.cache
 D:\TaiLieu\BlogWebMVC\NewsWeb\NewsWeb\NewsWeb\obj\Debug\net5.0\Razor\Areas\Admin\Views\Accounts\Create.cshtml.g.cs
 D:\TaiLieu\BlogWebMVC\NewsWeb\NewsWeb\NewsWeb\obj\Debug\net5.0\Razor\Areas\Admin\Views\Accounts\Delete.cshtml.g.cs
 D:\TaiLieu\BlogWebMVC\NewsWeb\NewsWeb\NewsWeb\obj\Debug\net5.0\Razor\Areas\Admin\Views\Accounts\Details.cshtml.g.cs
