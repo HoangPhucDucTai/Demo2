@@ -46,10 +46,10 @@
             <div class="slim-header-left">
                 <h2 class="slim-logo"><a href="index.html">Admin<span>.</span></a></h2>
                 <a href="" id="slimSidebarMenu" class="slim-sidebar-menu"><span></span></a>
-                <div class="search-box">
-                    <input type="text" class="form-control" placeholder="Search">
-                    <button class="btn btn-primary"><i class="fa fa-search"></i></button>
-                </div><!-- search-box -->
+                <!--<div class="search-box">-->
+                    @*<input type="text" class="form-control" placeholder="Search">
+                    <button class="btn btn-primary"><i class="fa fa-search"></i></button>*@
+                <!--</div>--><!-- search-box -->
             </div><!-- slim-header-left -->
             <div class="slim-header-right">
                 @if (User.Identity.IsAuthenticated)
@@ -62,10 +62,10 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
                             <nav class="nav">
-                                <a href="page-profile.html" class="nav-link"><i class="icon ion-person"></i> View Profile</a>
+                                @*<a href="page-profile.html" class="nav-link"><i class="icon ion-person"></i> View Profile</a>
                                 <a href="page-edit-profile.html" class="nav-link"><i class="icon ion-compose"></i> Edit Profile</a>
                                 <a href="page-activity.html" class="nav-link"><i class="icon ion-ios-bolt"></i> Activity Log</a>
-                                <a href="page-settings.html" class="nav-link"><i class="icon ion-ios-gear"></i> Account Settings</a>
+                                <a href="page-settings.html" class="nav-link"><i class="icon ion-ios-gear"></i> Account Settings</a>*@
                                 <a href="/dang-xuat.html" class="nav-link"><i class="icon ion-forward"></i> Sign Out</a>
                             </nav>
                         </div><!-- dropdown-menu -->
@@ -79,12 +79,12 @@
     <div class="slim-body">
         <div class="slim-sidebar">
             <ul class="nav nav-sidebar">
-                <li class="sidebar-nav-item with-sub active">
-                    <a class="sidebar-nav-link" asp-area="Admin" asp-controller="Home" asp-action="Index">
-                        <i class="icon ion-ios-home-outline"></i>
-                        <span>Bảng tin</span>
-                    </a>
-                </li>
+                <!--<li class="sidebar-nav-item with-sub active">
+                    <a class="sidebar-nav-link" asp-area="Admin" asp-controller="Home" asp-action="Index">-->
+                        @*<i class="icon ion-ios-home-outline"></i>
+                        <span>Bảng tin</span>*@
+                    <!--</a>
+                </li>-->
                 <li class="sidebar-nav-item with-sub">
                     <a class="sidebar-nav-link" href="#">
                         <i class="icon ion-ios-filing-outline"></i>
@@ -125,13 +125,6 @@
                 @RenderBody()
 
             </div><!-- container -->
-
-            <div class="slim-footer mg-t-0">
-                <div class="container-fluid">
-                    <p>Copyright 2018 &copy; All Rights Reserved. Slim Dashboard Template</p>
-                    <p>Designed by: <a href="">ThemePixels</a></p>
-                </div><!-- container-fluid -->
-            </div><!-- slim-footer -->
         </div><!-- slim-mainpanel -->
     </div><!-- slim-body -->
 

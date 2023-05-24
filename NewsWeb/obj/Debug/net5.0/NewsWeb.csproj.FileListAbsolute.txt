@@ -471,3 +471,4 @@ D:\TaiLieu\BlogWebMVC\NewsWeb\NewsWeb\NewsWeb\obj\Debug\net5.0\Razor\Areas\Admin
 D:\TaiLieu\BlogWebMVC\NewsWeb\NewsWeb\NewsWeb\obj\Debug\net5.0\Razor\Areas\Admin\Views\_ViewImports.cshtml.g.cs
 D:\TaiLieu\BlogWebMVC\NewsWeb\NewsWeb\NewsWeb\obj\Debug\net5.0\Razor\Areas\Admin\Views\_ViewStart.cshtml.g.cs
 D:\TaiLieu\BlogWebMVC\NewsWeb\NewsWeb\NewsWeb\obj\Debug\net5.0\Razor\Views\Shared\_RightPartialView.cshtml.g.cs
+D:\TaiLieu\BlogWebMVC\NewsWeb\NewsWeb\NewsWeb\obj\Debug\net5.0\NewsWeb.csproj.AssemblyReference.cache
