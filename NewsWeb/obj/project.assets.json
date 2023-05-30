@@ -7326,11 +7326,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\TaiLieu\\BlogWebMVC\\NewsWeb\\NewsWeb\\NewsWeb\\NewsWeb.csproj",
+      "projectUniqueName": "D:\\TaiLieu\\NewsWebMVC_Core\\NewsWeb\\NewsWeb\\NewsWeb\\NewsWeb.csproj",
       "projectName": "NewsWeb",
-      "projectPath": "D:\\TaiLieu\\BlogWebMVC\\NewsWeb\\NewsWeb\\NewsWeb\\NewsWeb.csproj",
+      "projectPath": "D:\\TaiLieu\\NewsWebMVC_Core\\NewsWeb\\NewsWeb\\NewsWeb\\NewsWeb.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "D:\\TaiLieu\\BlogWebMVC\\NewsWeb\\NewsWeb\\NewsWeb\\obj\\",
+      "outputPath": "D:\\TaiLieu\\NewsWebMVC_Core\\NewsWeb\\NewsWeb\\NewsWeb\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",

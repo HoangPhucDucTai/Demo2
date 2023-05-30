@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SwXk3sHZQhH1a3wjeX2/VLmXo8TIIHYL/vSOU9tNip0ZxPjfoWqwHzNKkEzG1xrvyf4JV3hIVP33ecS4UN0AGQ==",
+  "dgSpecHash": "IIouTvct3ndumjqbv+PEt2Wg7dAS8tAh3upY+4JLKxBTCNbdNGRZNkz+wv3kjZkvlSfxzLDwgS3uVnhSxuQJkA==",
   "success": true,
-  "projectFilePath": "D:\\TaiLieu\\BlogWebMVC\\NewsWeb\\NewsWeb\\NewsWeb\\NewsWeb.csproj",
+  "projectFilePath": "D:\\TaiLieu\\NewsWebMVC_Core\\NewsWeb\\NewsWeb\\NewsWeb\\NewsWeb.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrator\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
